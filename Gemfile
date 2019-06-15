@@ -7,6 +7,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder'
+gem 'sqlite3'
 gem 'tzinfo-data'
 gem 'distribution'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
@@ -32,7 +33,6 @@ group :test do
 end
 
 group :production do
-  gem 'sqlite3'
   gem 'rack-cache', :require => 'rack/cache'
   gem 'sentry-raven'
 end

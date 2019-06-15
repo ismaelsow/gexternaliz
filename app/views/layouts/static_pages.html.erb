@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'static_pages', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body class="homepage">
+    <!-- HEADER -->
+    <div class="ui stackable grid fixed menu flashy-menu" style="border:none;box-shadow:none;padding-top:12px">
+      <div class="two wide computer sixteen wide mobile column " style="padding:0">
+      </div>
+
+      <div class="twelve wide computer sixteen wide mobile column" style="padding:0">
+        <%= render 'shared/top_menu_static_pages' %>
+      </div>
+
+      <div class="two wide computer sixteen wide mobile column hide-on-mobile" style="padding:0">
+      </div>
+    </div>
+
+    <%= yield %>
+
+    <!-- FOOTER -->
+    <%= render 'shared/footer_static' %>
+
+    <script>
+jQuery("i.logo").click(function(){
+  window.location = "/";
+});
+    </script>
+
+    <script>
+      function resizeMenu() {
+        var rightNav = jQuery("#rightNav");
+        var topMenu = jQuery(".topMenu");
+
+        if (rightNav.attr("class").match(/menu/)) {
+          jQuery("a.ui.right.floated.item").css("display", "block");
+          rightNav.addClass("responsive");
+          rightNav.removeClass("menu");
+          topMenu.removeClass("menu");
+        }
+        else {
+          jQuery("a.ui.right.floated.item").css("display", "none");
+          jQuery("a.hamburger").css("display", "flex");
+          rightNav.removeClass("responsive");
+          rightNav.addClass("menu");
+          topMenu.addClass("menu");
+        }
+      }
+    </script>
+  </body>
+</html>

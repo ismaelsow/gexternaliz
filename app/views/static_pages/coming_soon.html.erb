@@ -1,0 +1,61 @@
+<div id="comingSoonApp" class="big-top-padding-desktop">
+  <!-- USP + SCREENSHOT -->
+  <div class="ui stackable grid big-top-margin big-bottom-margin big-bottom-padding">
+    <div class="two wide computer sixteen wide mobile column hide-on-mobile">
+    </div>
+
+    <div class="seven wide computer sixteen wide mobile column">
+    </div>
+
+    <div class="one wide computer sixteen wide mobile column" style="">
+    </div>
+
+    <div class="four wide computer sixteen wide mobile column">
+      <h1 class="no-top-padding medium-bottom-margin">Usability testing with superpowers.</h1>
+
+      <form class="medium-bottom-margin request-form" onsubmit="return false">
+        <input class="field input-field body-medium request-early-access-email" type="text" placeholder="Enter email"  @keyup="validateEmail" @change="validateEmail">
+        </input>
+        <button class="ui icon massive button btn-primary small-top-margin request-early-access-confirmation" v-bind:disabled="!emailIsValid" @click="processEarlyAccessRequest">
+          Request early access
+        </button>
+      </form>
+
+      <div style="display:none" class="request-ok">
+        <span class="body-big">Thanks, we will get in touch as soon as we are ready!</span>
+        <img src="<%= image_url "thumbs-up-emoji.png" %>" style="displa:inline-block;width:32px;height:32px;margin-bottom:-4px;" />
+      </div>
+
+      <div style="display:none" class="request-ko">
+        <span class="body-big">Sorry, something went wrong! Please reload the page and retry.</span>
+        <img src="<%= image_url "crying-cat-face-emoji.png" %>" style="displa:inline-block;width:32px;height:32px;margin-bottom:-8px;" />
+      </div>
+
+      <h2 class="small-bottom-margin" style="font-weight:normal">Better is coming...</h2>
+      <p class="body-medium text-blue" style="background: aliceblue;padding: 8px 12px;border-radius: 4px;">Are you tired of using panels with <strong>limited recruiting criteria</strong> and <strong>non-representative participants?</strong> Tired of doing <strong>grunt work?</strong> Rejoice. We are building something better:</p>
+      <div class="ui list medium-top-margin">
+        <div class="item body-medium">
+          <i class="check circle text-green icon"></i>
+          <div class="content">
+            World's <strong>biggest participant panel</strong>
+          </div>
+        </div>
+        <div class="item body-medium">
+          <i class="check circle text-green icon"></i>
+          <div class="content">
+            Recording with <strong>super fast note-taking</strong>
+          </div>
+        </div>
+        <div class="item body-medium">
+          <i class="check circle text-green icon"></i>
+          <div class="content">
+            Insanely powerful <strong>automated reporting</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two wide computer sixteen wide mobile column">
+    </div>
+  </div>
+</div>

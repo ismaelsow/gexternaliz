@@ -1,0 +1,61 @@
+<div class="ui borderless menu fluid" style="border:none !important;box-shadow: unset !important;background: none !important;">
+  <div class="item" style="padding-left:0px !important;padding-right:0px !important;padding-top: 8px !important">
+    <h2 class="ui icon header noBottomMargin">
+      <a href="/" class="logo text-green">searchness</a>
+    </h2>
+  </div>
+
+  <div class="right menu" id="rightNav">
+    <a href="#" class="ui right floated item hide-on-mobile text-uppercase" style="font-weight:100;margin-top:-28px" data-turbolinks="false"><span class="flashy-menu-link"><i class="lock icon"></i>Log in</span></a>
+
+    <a href="javascript:void(0);" class="ui right floated item hamburger hide-on-desktop" style="font-size:16px; margin-left: 0px !important;padding-right:0px !important;" data-turbolinks="false" onclick="resizeMenu()"><i class="sidebar icon"></i></a>
+  </div>
+</div>
+
+<script>
+function resizeMenu() {
+  var rightNav = jQuery("#rightNav");
+  var topMenu = jQuery(".topMenu");
+
+  if (rightNav.attr("class").match(/menu/)) {
+    jQuery("a.ui.right.floated.item").css("display", "block");
+    rightNav.addClass("responsive");
+    rightNav.removeClass("menu");
+    topMenu.removeClass("menu");
+  }
+  else {
+    jQuery("a.ui.right.floated.item").css("display", "none");
+    jQuery("a.hamburger").css("display", "flex");
+    rightNav.removeClass("responsive");
+    rightNav.addClass("menu");
+    topMenu.addClass("menu");
+  }
+}
+
+if (isMobileDevice()){
+  jQuery(".ui.stackable.grid.fixed.menu.flashy-menu").removeClass("fixed").removeClass("menu");
+}
+else {
+
+  window.addEventListener("scroll", function(){
+    var scrollHeight = jQuery(document).height();
+    var scrollPosition = jQuery(window).height() + jQuery(window).scrollTop();
+
+    if (window.scrollY > 0 && (scrollHeight - scrollPosition) / scrollHeight === 0) {
+      document.querySelector(".ui.stackable.grid.fixed.menu").style.boxShadow = "rgba(8, 55, 73, 0.1) 0px 0px 12px 0px";
+      document.querySelector(".ui.stackable.grid.fixed.menu").style.opacity = 1;
+      jQuery(".flashy-menu-link").hide();
+    }
+    else if (window.scrollY > 0) {
+      document.querySelector(".ui.stackable.grid.fixed.menu").style.boxShadow = "rgba(8, 55, 73, 0.1) 0px 0px 12px 0px";
+      document.querySelector(".ui.stackable.grid.fixed.menu").style.opacity = 0.9;
+      jQuery(".flashy-menu-link").hide();
+    }
+    else {
+      document.querySelector(".ui.stackable.grid.fixed.menu").style.boxShadow = "none";
+      document.querySelector(".ui.stackable.grid.fixed.menu").style.opacity = 1;
+      jQuery(".flashy-menu-link").show();
+    }
+  });
+}
+</script>
