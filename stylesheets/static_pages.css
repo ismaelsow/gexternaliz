@@ -69,6 +69,8 @@ div.screenshot-frame img {
     margin-top: -32px !important;
   }
 
+  h1 { margin-top: 96px !important; }
+
   .big-top-padding-desktop {
     padding-top: 0px;
   }
